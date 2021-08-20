@@ -1,6 +1,8 @@
 import React from 'react'
 import { useRef, useState, useEffect } from 'react'
 import './thememenu.css'
+import { useDispatch } from 'react-redux'
+import ThemeAction from '../../redux/actions/themeAction'
 
 const clickOutsideRef = (content_ref, toggle_ref) => {
     document.addEventListener('mousedown', (e) => {
@@ -71,7 +73,7 @@ const ThemeMenu = () => {
     const menu_ref = useRef(null);
     const menu_toggle_ref = useRef(null);
 
-    clickOutsideRef(menu_ref, menu_toggle_ref)
+    clickOutsideRef( menu_toggle_ref, menu_ref)
 
     const setActiveMenu = () => menu_ref.current.classList.add('active')
 
@@ -81,14 +83,18 @@ const ThemeMenu = () => {
 
     const [currColor, setCurrColor] = useState('blue')
 
+    const dispatch = useDispatch()
+
     const setMode = mode => {
         setCurrMode(mode.id)
         localStorage.setItem('themeMode', mode.class)
+        dispatch(ThemeAction.setMode(mode.class))
     }
 
     const setColor = color => {
         setCurrColor(color.id)
         localStorage.setItem('colorMode', color.class)
+        dispatch(ThemeAction.setColor(color.class))
     }
 
     useEffect(() => {
@@ -125,7 +131,7 @@ const ThemeMenu = () => {
                     </ul>
                 </div>
                 <div className="theme-menu__select">
-                    <span>Choose mode</span>
+                    <span>Choose color</span>
                     <ul className="mode-list">
                         {
                             color_settings.map((item,index) => (
