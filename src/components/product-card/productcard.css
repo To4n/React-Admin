@@ -1,0 +1,38 @@
+.product-card{
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--main-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow:hidden;
+    z-index: 1;
+    margin-bottom: 30px;
+}
+
+.product-card__image{
+    width: 200px;
+    height: 300px;
+    overflow:hidden;
+
+}
+
+.product-card__image > img {
+    width: 100%;
+}
+
+.product-card__name{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.product-card:hover{
+    transform: scale(1.05);
+}
+
+

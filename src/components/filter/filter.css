@@ -1,0 +1,50 @@
+.product-filter{
+    min-width: var(--sidebar-width);
+}
+
+.filter-list, .filter-list__star {
+    margin-top: 20px;
+}
+
+.product-filter__select{
+    margin-top: 40px;
+}
+
+.filter-list > li{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.filter-list > li ~ li {
+    margin-top: 10px;
+}
+
+.filter-list__option{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--txt-color);
+}
+
+.filter-list__star > i{
+    margin-right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.filter-list__option > i {
+    transform: scale(0);
+    transition: transform .5s var(--transition-cubic);
+}
+
+.filter-list__option.active > i {
+    transform: scale(1);
+}

@@ -1,0 +1,8 @@
+[
+{"id":1, "sku": "aaa", "name": "Lux shirt I", "collection": "tshirt", "brand": "nike", "price":40, "reviews": 4},
+{"id":2, "sku": "aab", "name": "Lux shirt II", "collection": "tshirt", "brand": "nike", "price":50, "reviews": 2}
+
+
+
+
+]
